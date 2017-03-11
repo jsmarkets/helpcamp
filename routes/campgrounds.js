@@ -1,3 +1,9 @@
+
+
+
+var lwipJpegAutorotate = require('lwip-jpeg-autorotate');
+ 
+var cloudinary = require('cloudinary').v2;
 var express     =   require("express");
 var multer      =   require('multer');
 var router      =   express.Router();
@@ -7,15 +13,24 @@ var Comment     = require("../models/comment");
 
 var storage =   multer.diskStorage({
   destination: function (req, file, callback) {
-    callback(null, './public/uploads');
+    callback(null, './public/uploads
+    console.log("first");
   },
   filename: function (req, file, callback) {
     callback(null, Date.now() + file.originalname);
+    console.log("this happened");
   }
 });
 var upload = multer({ storage : storage}).single('image');
 
-//Index - show all Campgrounds
+console.log("then this");
+
+
+
+
+
+
+//Index - show  all Campgrounds
 router.get("/", function(req, res) {
         //Get all campgrounds from DB
         Campground.find({}, function(err, allcampgrounds){

@@ -10,7 +10,8 @@ var express     = require("express"),
     Comment     = require("./models/comment"),
     User        = require("./models/user"),
     seedDB      = require("./seeds")
-    
+    var lwipJpegAutorotate = require('lwip-jpeg-autorotate');
+ 
 //requring routes
 var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
